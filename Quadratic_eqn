@@ -1,0 +1,25 @@
+import math
+
+def find_roots(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return round(root1, 2), round(root2, 2)
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return round(root, 2), round(root, 2)
+    else:
+        real_part = -b / (2*a)
+        imaginary_part = math.sqrt(abs(discriminant)) / (2*a)
+        return f"{round(real_part, 2)} + {round(imaginary_part, 2)}i", f"{round(real_part, 2)} - {round(imaginary_part, 2)}i"
+
+# Input coefficients
+A, B, C = map(int, input().split())
+
+# Calculate roots
+root1, root2 = find_roots(A, B, C)
+
+# Output roots
+print(root1)
+print(root2)
