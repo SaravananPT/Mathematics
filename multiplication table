@@ -1,0 +1,14 @@
+# Simple Python script to generate a multiplication table
+
+def multiplication_table(n):
+    """Generate a multiplication table up to n."""
+    for i in range(1, n+1):
+        for j in range(1, n+1):
+            print(f"{i} * {j} = {i*j}")
+        print()  # Add a newline after each row
+
+# Input
+num = int(input("Enter a number: "))
+
+# Generate multiplication table
+multiplication_table(num)
